@@ -1,5 +1,6 @@
 package lexer;
 
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 /**
@@ -13,6 +14,7 @@ public class CatchAll extends Token {
 
   public CatchAll() {
     super();
+    Logger lexerLog = Logger.getLogger("LexLoggingToken");
     pattern = Pattern.compile("^.");
   }
 
@@ -28,7 +30,7 @@ public class CatchAll extends Token {
 
   @Override
   protected Token getToken() {
-    super.lexerLog.info("Token " + this.getClass().getName() + " was used.");
+    lexerLog.info("Token " + this.getClass().getName() + " was used.");
     Token newCA = new CatchAll(this);
     return newCA;
   }

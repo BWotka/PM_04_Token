@@ -1,5 +1,6 @@
 package lexer;
 
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 /**
@@ -14,6 +15,7 @@ public class MultilineComment extends Token {
 
   public MultilineComment() {
     super();
+    Logger lexerLog = Logger.getLogger("LexLoggingToken");
     pattern = Pattern.compile("^/\\*(.|[\\r\\n])*?\\*/");
   }
 
@@ -29,7 +31,7 @@ public class MultilineComment extends Token {
 
   @Override
   protected Token getToken() {
-    super.lexerLog.info("Token " + this.getClass().getName() + " was used.");
+    lexerLog.info("Token " + this.getClass().getName() + " was used.");
     Token newMCom = new MultilineComment(this);
     return newMCom;
   }

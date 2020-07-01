@@ -1,5 +1,6 @@
 package lexer;
 
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 /**
@@ -14,6 +15,7 @@ public class NewLine extends Token {
 
   public NewLine() {
     super();
+    Logger lexerLog = Logger.getLogger("LexLoggingToken");
     pattern = Pattern.compile("^\\n");
   }
 
@@ -29,7 +31,7 @@ public class NewLine extends Token {
 
   @Override
   protected Token getToken() {
-    super.lexerLog.info("Token " + this.getClass().getName() + " was used.");
+    lexerLog.info("Token " + this.getClass().getName() + " was used.");
     Token newNL = new NewLine(this);
     return newNL;
   }

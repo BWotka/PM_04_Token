@@ -1,5 +1,6 @@
 package lexer;
 
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 /**
@@ -14,6 +15,7 @@ public class StringContent extends Token {
 
   public StringContent() {
     super();
+    Logger lexerLog = Logger.getLogger("LexLoggingToken");
     pattern = Pattern.compile("^(([\"|\']).*\\2)");
   }
 
@@ -29,7 +31,7 @@ public class StringContent extends Token {
 
   @Override
   protected Token getToken() {
-    super.lexerLog.info("Token " + this.getClass().getName() + " was used.");
+    lexerLog.info("Token " + this.getClass().getName() + " was used.");
     Token newSC = new StringContent(this);
     return newSC;
   }
