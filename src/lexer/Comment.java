@@ -4,7 +4,7 @@ import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 /**
- * High priority token, recognizes single line comments.
+ * High priority token , recognizes single line comments.
  *
  * @author Benedikt Wotka
  */
