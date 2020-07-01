@@ -12,10 +12,12 @@ import java.util.regex.Pattern;
 public class KeyWord extends Token {
 
   private String content;
+  Logger lexerLog;
+
 
   public KeyWord() {
     super();
-    Logger lexerLog = Logger.getLogger("LexLoggingToken");
+    lexerLog = Logger.getLogger("LexLoggingToken");
     pattern = Pattern.compile("^(public|private|protected|abstract|void)");
   }
 

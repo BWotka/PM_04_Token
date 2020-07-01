@@ -12,10 +12,12 @@ import java.util.regex.Pattern;
 public class StringContent extends Token {
 
   private String content;
+  Logger lexerLog;
+
 
   public StringContent() {
     super();
-    Logger lexerLog = Logger.getLogger("LexLoggingToken");
+    lexerLog = Logger.getLogger("LexLoggingToken");
     pattern = Pattern.compile("^(([\"|\']).*\\2)");
   }
 

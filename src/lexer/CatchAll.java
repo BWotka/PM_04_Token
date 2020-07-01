@@ -11,10 +11,12 @@ import java.util.regex.Pattern;
 @Catch_All
 public class CatchAll extends Token {
   private String content;
+  Logger lexerLog;
+
 
   public CatchAll() {
     super();
-    Logger lexerLog = Logger.getLogger("LexLoggingToken");
+     lexerLog = Logger.getLogger("LexLoggingToken");
     pattern = Pattern.compile("^.");
   }
 

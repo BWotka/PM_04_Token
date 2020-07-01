@@ -12,10 +12,12 @@ import java.util.regex.Pattern;
 public class MultilineComment extends Token {
 
   private String content;
+  Logger lexerLog;
+
 
   public MultilineComment() {
     super();
-    Logger lexerLog = Logger.getLogger("LexLoggingToken");
+    lexerLog = Logger.getLogger("LexLoggingToken");
     pattern = Pattern.compile("^/\\*(.|[\\r\\n])*?\\*/");
   }
 

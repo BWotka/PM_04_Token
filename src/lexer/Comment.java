@@ -11,10 +11,11 @@ import java.util.regex.Pattern;
 @Prio(value = 1)
 public class Comment extends Token {
   private String content;
+  Logger lexerLog;
 
   public Comment() {
     super();
-    Logger lexerLog = Logger.getLogger("LexLoggingToken");
+    lexerLog = Logger.getLogger("LexLoggingToken");
     pattern = Pattern.compile("^//.*($|\\n)");
   }
 
